@@ -290,9 +290,12 @@ def plot_learning_curves(logs, parameters):
         x = np.arange(startx, endx + 1)
 
     if parameters.plot_horizontal:
-        plt.plot([0, parameters.x_max],
-                 [parameters.horizontal, parameters.horizontal],
-                 color='k', linestyle=parameters.horizontal_linestyle, linewidth=1, label=parameters.horizontal_label)
+        hor_x = np.linspace(0, parameters.x_max, parameters.x_max)
+        hor_y = parameters.horizontal * np.ones(parameters.x_max)
+        plt.plot(hor_x, hor_y, color='k', linestyle=parameters.horizontal_linestyle, linewidth=1, label=parameters.horizontal_label)
+        # plt.plot([parameters.x_max],
+        #          [parameters.horizontal],
+        #          color='k', linestyle=parameters.horizontal_linestyle, linewidth=1, label=parameters.horizontal_label)
 
     y = np.zeros((len(x), n_logs))
     for i in range(0, n_logs):
@@ -328,8 +331,9 @@ def plot_learning_curves(logs, parameters):
         plt.yticks([0, -1, -10, -100], ('0', '-1', '-10', '-100'))
     plt.ylabel(parameters.ylabel)
     plt.title(parameters.title)
-    if parameters.save_fig:
 
+    if parameters.save_fig:
+        # plt.show()
         plt.savefig(parameters.path, format='pdf', dpi=300)
         plt.close()
 

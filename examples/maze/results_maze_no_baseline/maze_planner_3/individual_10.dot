@@ -1,0 +1,21 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+"NotReadyForSG?" [fillcolor=gray, fontcolor=black, fontsize=9, label="NotReadyForSG?", shape=ellipse, style=filled];
+Sequence -> "NotReadyForSG?";
+"MoveTo!" [fillcolor=gray, fontcolor=black, fontsize=9, label="MoveTo!", shape=ellipse, style=filled];
+Sequence -> "MoveTo!";
+"GetSubGoal!" [fillcolor=gray, fontcolor=black, fontsize=9, label="GetSubGoal!", shape=ellipse, style=filled];
+Sequence -> "GetSubGoal!";
+"CompLkGraph!" [fillcolor=gray, fontcolor=black, fontsize=9, label="CompLkGraph!", shape=ellipse, style=filled];
+Sequence -> "CompLkGraph!";
+"GetSubGoal!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="GetSubGoal!*", shape=ellipse, style=filled];
+Sequence -> "GetSubGoal!*";
+"ReachGoal?" [fillcolor=gray, fontcolor=black, fontsize=9, label="ReachGoal?", shape=ellipse, style=filled];
+Sequence -> "ReachGoal?";
+"LkGraph?" [fillcolor=gray, fontcolor=black, fontsize=9, label="LkGraph?", shape=ellipse, style=filled];
+Sequence -> "LkGraph?";
+}

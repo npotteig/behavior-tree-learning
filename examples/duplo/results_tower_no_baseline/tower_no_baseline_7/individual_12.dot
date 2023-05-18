@@ -1,0 +1,33 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+"pick 0!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!", shape=ellipse, style=filled];
+Sequence -> "pick 0!";
+"pick 0!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!*", shape=ellipse, style=filled];
+Sequence -> "pick 0!*";
+Fallback [fillcolor=cyan, fontcolor=black, fontsize=9, label=Fallback, shape=octagon, style=filled];
+Sequence -> Fallback;
+"Sequence*" [fillcolor=cyan, fontcolor=black, fontsize=9, label="Sequence*", shape=octagon, style=filled];
+Fallback -> "Sequence*";
+"picked 2?" [fillcolor=gray, fontcolor=black, fontsize=9, label="picked 2?", shape=ellipse, style=filled];
+"Sequence*" -> "picked 2?";
+"pick 2!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 2!", shape=ellipse, style=filled];
+"Sequence*" -> "pick 2!";
+"pick 1!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 1!", shape=ellipse, style=filled];
+"Sequence*" -> "pick 1!";
+"place on 0!" [fillcolor=gray, fontcolor=black, fontsize=9, label="place on 0!", shape=ellipse, style=filled];
+"Sequence*" -> "place on 0!";
+"pick 0!**" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!**", shape=ellipse, style=filled];
+"Sequence*" -> "pick 0!**";
+"pick 0!***" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!***", shape=ellipse, style=filled];
+"Sequence*" -> "pick 0!***";
+"picked 1?" [fillcolor=gray, fontcolor=black, fontsize=9, label="picked 1?", shape=ellipse, style=filled];
+Fallback -> "picked 1?";
+"place at (0.0, 0.05, 0.0)!" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!", shape=ellipse, style=filled];
+Fallback -> "place at (0.0, 0.05, 0.0)!";
+"pick 0!****" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!****", shape=ellipse, style=filled];
+Fallback -> "pick 0!****";
+}

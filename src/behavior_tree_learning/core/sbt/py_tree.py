@@ -58,8 +58,11 @@ class StringBehaviorTree(pt.trees.BehaviourTree):
 
         string = pt.display.ascii_tree(self.root)
         string = string.replace("[o] ", "")
+        string = string.replace("{o} ", "")
         string = string.replace("\t", "")
         string = string.replace("-->", "")
+        string = string.replace("\x1b[1m", "")
+        string = string.replace("\x1b[0m", "")
         string = string.replace("Fallback", "f(")
         string = string.replace("Sequence", "s(")
         bt = string.split("\n")
@@ -121,8 +124,10 @@ class StringBehaviorTree(pt.trees.BehaviourTree):
         status_ok = True
         start = time.time()
 
-        while (self.root.status is not pt.common.Status.FAILURE or straight_fails < max_straight_fails) \
-                and (self.root.status is not pt.common.Status.SUCCESS or successes < successes_required) \
+        # while (self.root.status is not pt.common.Status.FAILURE or straight_fails < max_straight_fails) \
+        #         and (self.root.status is not pt.common.Status.SUCCESS or successes < successes_required) \
+        #         and ticks < max_ticks and status_ok:
+        while (successes < successes_required) \
                 and ticks < max_ticks and status_ok:
 
             status_ok = self._world.is_alive()
@@ -130,8 +135,10 @@ class StringBehaviorTree(pt.trees.BehaviourTree):
             if status_ok:
                 self.root.tick_once()
 
+                # print(pt.display.unicode_tree(root=self.root, show_status=True))
+                # print('Current Tick:',ticks)
                 ticks += 1
-                if self.root.status is pt.common.Status.SUCCESS:
+                if self._world.done:
                     successes += 1
                 else:
                     successes = 0
@@ -141,10 +148,10 @@ class StringBehaviorTree(pt.trees.BehaviourTree):
                 else:
                     straight_fails = 0
 
-                if time.time() - start > max_time:
-                    status_ok = False
-                    if self._trace_info.verbose:
-                        print("Max time expired")
+                # if time.time() - start > max_time:
+                #     status_ok = False
+                #     if self._trace_info.verbose:
+                #         print("Max time expired")
 
         if self._trace_info.verbose:
             print("Status: %s Ticks: %d, Time: %s" % (status_ok, ticks, time.time() - start))

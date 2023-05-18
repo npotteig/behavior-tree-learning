@@ -1,0 +1,26 @@
+ind_start_length 8
+min_length 2
+n_population 16
+f_crossover 0.5
+n_offspring_crossover 2
+replace_crossover False
+f_mutation 0.5
+n_offspring_mutation 2
+parent_selection SelectionMethods.RANK
+survivor_selection SelectionMethods.RANK
+f_elites 0.1
+f_parents 0.1
+mutate_co_offspring False
+mutate_co_parents True
+mutation_p_add 0.4
+mutation_p_delete 0.3
+allow_identical False
+keep_baseline True
+boost_baseline True
+boost_baseline_only_co True
+n_generations 200
+fitness_threshold 0.0
+hash_table_size 100000
+rerun_fitness 0
+log_name maze_planner_boost_5
+Baseline: ['f(', 'ReachGoal?', 's(', 'CompLkGraph!', 'f(', 'NotReadyForSG?', 'GetSubGoal!', ')', 'MoveTo!', ')', ')']

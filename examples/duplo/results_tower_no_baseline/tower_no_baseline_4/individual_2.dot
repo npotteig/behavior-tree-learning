@@ -1,0 +1,33 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Fallback [fillcolor=cyan, fontcolor=black, fontsize=9, label=Fallback, shape=octagon, style=filled];
+"0 on 2?" [fillcolor=gray, fontcolor=black, fontsize=9, label="0 on 2?", shape=ellipse, style=filled];
+Fallback -> "0 on 2?";
+"place at (0.0, 0.05, 0.0)!" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!", shape=ellipse, style=filled];
+Fallback -> "place at (0.0, 0.05, 0.0)!";
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+Fallback -> Sequence;
+"pick 0!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!", shape=ellipse, style=filled];
+Sequence -> "pick 0!";
+"pick 0!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!*", shape=ellipse, style=filled];
+Sequence -> "pick 0!*";
+"place at (0.0, 0.05, 0.0)!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!*", shape=ellipse, style=filled];
+Sequence -> "place at (0.0, 0.05, 0.0)!*";
+"pick 0!**" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!**", shape=ellipse, style=filled];
+Sequence -> "pick 0!**";
+"place at (0.0, 0.05, 0.0)!**" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!**", shape=ellipse, style=filled];
+Sequence -> "place at (0.0, 0.05, 0.0)!**";
+"Sequence*" [fillcolor=cyan, fontcolor=black, fontsize=9, label="Sequence*", shape=octagon, style=filled];
+Fallback -> "Sequence*";
+"picked 1?" [fillcolor=gray, fontcolor=black, fontsize=9, label="picked 1?", shape=ellipse, style=filled];
+"Sequence*" -> "picked 1?";
+"apply force 1!" [fillcolor=gray, fontcolor=black, fontsize=9, label="apply force 1!", shape=ellipse, style=filled];
+"Sequence*" -> "apply force 1!";
+"place at (0.0, 0.05, 0.0)!***" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!***", shape=ellipse, style=filled];
+Fallback -> "place at (0.0, 0.05, 0.0)!***";
+"pick 2!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 2!", shape=ellipse, style=filled];
+Fallback -> "pick 2!";
+}

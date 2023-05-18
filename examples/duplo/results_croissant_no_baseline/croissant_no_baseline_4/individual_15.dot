@@ -1,0 +1,23 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Fallback [fillcolor=cyan, fontcolor=black, fontsize=9, label=Fallback, shape=octagon, style=filled];
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+Fallback -> Sequence;
+"pick 3!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 3!", shape=ellipse, style=filled];
+Sequence -> "pick 3!";
+"pick 3!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 3!*", shape=ellipse, style=filled];
+Sequence -> "pick 3!*";
+"pick 3!**" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 3!**", shape=ellipse, style=filled];
+Sequence -> "pick 3!**";
+"place at (0.016, 0.032, 0.0)!" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.016, 0.032, 0.0)!", shape=ellipse, style=filled];
+Sequence -> "place at (0.016, 0.032, 0.0)!";
+"pick 2!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 2!", shape=ellipse, style=filled];
+Fallback -> "pick 2!";
+"pick 3!***" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 3!***", shape=ellipse, style=filled];
+Fallback -> "pick 3!***";
+"3 on 1?" [fillcolor=gray, fontcolor=black, fontsize=9, label="3 on 1?", shape=ellipse, style=filled];
+Fallback -> "3 on 1?";
+}

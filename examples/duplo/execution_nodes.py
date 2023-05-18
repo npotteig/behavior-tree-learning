@@ -347,7 +347,7 @@ def _make_croissant_nodes():
     behavior_register.add_action('pick 1!', Pick)
     behavior_register.add_action('pick 2!', Pick)
     behavior_register.add_action('pick 3!', Pick)
-    behavior_register.add_action('place at (0.0, 0.05, 0.0)!', Place)
+    behavior_register.add_action('place at (0.0, 0.0, 0.0)!', Place)
     behavior_register.add_action('place at (0.016, -0.032, 0.0)!', Place)
     behavior_register.add_action('place at (0.016, 0.032, 0.0)!', Place)
     behavior_register.add_action('place on 0!', Place)

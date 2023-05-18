@@ -107,7 +107,7 @@ class BehaviorNodeFactory:
         node = None
 
         if name == 'f(':
-            node = pt.composites.Selector('Fallback')
+            node = pt.composites.Selector('Fallback', memory=False)
         elif name == 's(':
             node = RSequence()
         elif name == 'p(':

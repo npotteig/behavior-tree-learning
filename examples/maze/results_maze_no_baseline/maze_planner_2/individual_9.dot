@@ -1,0 +1,11 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+"ReachGoal?" [fillcolor=gray, fontcolor=black, fontsize=9, label="ReachGoal?", shape=ellipse, style=filled];
+Sequence -> "ReachGoal?";
+"MoveTo!" [fillcolor=gray, fontcolor=black, fontsize=9, label="MoveTo!", shape=ellipse, style=filled];
+Sequence -> "MoveTo!";
+}

@@ -1,0 +1,31 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Fallback [fillcolor=cyan, fontcolor=black, fontsize=9, label=Fallback, shape=octagon, style=filled];
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+Fallback -> Sequence;
+"ReachGoal?" [fillcolor=gray, fontcolor=black, fontsize=9, label="ReachGoal?", shape=ellipse, style=filled];
+Sequence -> "ReachGoal?";
+"LkGraph?" [fillcolor=gray, fontcolor=black, fontsize=9, label="LkGraph?", shape=ellipse, style=filled];
+Sequence -> "LkGraph?";
+"GetLk!" [fillcolor=gray, fontcolor=black, fontsize=9, label="GetLk!", shape=ellipse, style=filled];
+Sequence -> "GetLk!";
+"Sequence*" [fillcolor=cyan, fontcolor=black, fontsize=9, label="Sequence*", shape=octagon, style=filled];
+Fallback -> "Sequence*";
+"Fallback*" [fillcolor=cyan, fontcolor=black, fontsize=9, label="Fallback*", shape=octagon, style=filled];
+"Sequence*" -> "Fallback*";
+"NotReadyForSG?" [fillcolor=gray, fontcolor=black, fontsize=9, label="NotReadyForSG?", shape=ellipse, style=filled];
+"Fallback*" -> "NotReadyForSG?";
+"GetSubGoal!" [fillcolor=gray, fontcolor=black, fontsize=9, label="GetSubGoal!", shape=ellipse, style=filled];
+"Fallback*" -> "GetSubGoal!";
+"GetSubGoal!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="GetSubGoal!*", shape=ellipse, style=filled];
+"Fallback*" -> "GetSubGoal!*";
+"MoveTo!" [fillcolor=gray, fontcolor=black, fontsize=9, label="MoveTo!", shape=ellipse, style=filled];
+"Sequence*" -> "MoveTo!";
+"LkGraph?*" [fillcolor=gray, fontcolor=black, fontsize=9, label="LkGraph?*", shape=ellipse, style=filled];
+Fallback -> "LkGraph?*";
+"ReachGoal?*" [fillcolor=gray, fontcolor=black, fontsize=9, label="ReachGoal?*", shape=ellipse, style=filled];
+Fallback -> "ReachGoal?*";
+}

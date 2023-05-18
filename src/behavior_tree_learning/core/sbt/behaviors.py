@@ -14,7 +14,7 @@ class RSequence(pt.composites.Selector):
     """
 
     def __init__(self, name="Sequence", children=None):
-        super(RSequence, self).__init__(name=name, children=children)
+        super(RSequence, self).__init__(name=name, children=children, memory=False)
 
     def tick(self):
         """

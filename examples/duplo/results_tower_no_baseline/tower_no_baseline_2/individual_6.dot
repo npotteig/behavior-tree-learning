@@ -1,0 +1,35 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Fallback [fillcolor=cyan, fontcolor=black, fontsize=9, label=Fallback, shape=octagon, style=filled];
+Sequence [fillcolor=cyan, fontcolor=black, fontsize=9, label=Sequence, shape=octagon, style=filled];
+Fallback -> Sequence;
+"place at (0.0, 0.05, 0.0)!" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!", shape=ellipse, style=filled];
+Sequence -> "place at (0.0, 0.05, 0.0)!";
+"0 at pos (0.0, 0.05, 0.0)?" [fillcolor=gray, fontcolor=black, fontsize=9, label="0 at pos (0.0, 0.05, 0.0)?", shape=ellipse, style=filled];
+Sequence -> "0 at pos (0.0, 0.05, 0.0)?";
+"2 at pos (0.0, 0.05, 0.0384)?" [fillcolor=gray, fontcolor=black, fontsize=9, label="2 at pos (0.0, 0.05, 0.0384)?", shape=ellipse, style=filled];
+Sequence -> "2 at pos (0.0, 0.05, 0.0384)?";
+"Sequence*" [fillcolor=cyan, fontcolor=black, fontsize=9, label="Sequence*", shape=octagon, style=filled];
+Fallback -> "Sequence*";
+"pick 2!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 2!", shape=ellipse, style=filled];
+"Sequence*" -> "pick 2!";
+"place at (0.0, 0.05, 0.0)!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!*", shape=ellipse, style=filled];
+"Sequence*" -> "place at (0.0, 0.05, 0.0)!*";
+"0 at pos (0.0, 0.05, 0.0)?*" [fillcolor=gray, fontcolor=black, fontsize=9, label="0 at pos (0.0, 0.05, 0.0)?*", shape=ellipse, style=filled];
+Fallback -> "0 at pos (0.0, 0.05, 0.0)?*";
+"Sequence**" [fillcolor=cyan, fontcolor=black, fontsize=9, label="Sequence**", shape=octagon, style=filled];
+Fallback -> "Sequence**";
+"pick 0!" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!", shape=ellipse, style=filled];
+"Sequence**" -> "pick 0!";
+"pick 0!*" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!*", shape=ellipse, style=filled];
+"Sequence**" -> "pick 0!*";
+"place at (0.0, 0.05, 0.0)!**" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!**", shape=ellipse, style=filled];
+"Sequence**" -> "place at (0.0, 0.05, 0.0)!**";
+"pick 0!**" [fillcolor=gray, fontcolor=black, fontsize=9, label="pick 0!**", shape=ellipse, style=filled];
+"Sequence**" -> "pick 0!**";
+"place at (0.0, 0.05, 0.0)!***" [fillcolor=gray, fontcolor=black, fontsize=9, label="place at (0.0, 0.05, 0.0)!***", shape=ellipse, style=filled];
+Fallback -> "place at (0.0, 0.05, 0.0)!***";
+}

@@ -1,0 +1,11 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Fallback [fillcolor=cyan, fontcolor=black, fontsize=9, label=Fallback, shape=octagon, style=filled];
+"3 on 0?" [fillcolor=gray, fontcolor=black, fontsize=9, label="3 on 0?", shape=ellipse, style=filled];
+Fallback -> "3 on 0?";
+"3 on 2?" [fillcolor=gray, fontcolor=black, fontsize=9, label="3 on 2?", shape=ellipse, style=filled];
+Fallback -> "3 on 2?";
+}

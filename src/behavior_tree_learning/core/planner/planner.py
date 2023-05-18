@@ -10,7 +10,7 @@ import py_trees as pt
 from behavior_tree_learning.core.sbt import StringBehaviorTree, BehaviorNodeFactory
 from behavior_tree_learning.core.sbt.behaviors import RSequence
 from behavior_tree_learning.core.sbt.behavior_tree import get_action_list
-from behavior_tree_learning.core.planner import PlannerBehaviorNodeFactory
+from behavior_tree_learning.core.planner.node_factory import PlannerBehaviorNodeFactory
 
 
 def _handle_precondition(precondition, behavior_factory, world):
@@ -21,9 +21,10 @@ def _handle_precondition(precondition, behavior_factory, world):
 
     print("Pre-condition in: ", precondition)
     condition_parameters = behavior_factory.get_condition_parameters(precondition)
+    print(condition_parameters)
 
     for action in get_action_list():
-        
+
         action_node, _ = behavior_factory.get_node(action, world, condition_parameters)        
         if precondition in action_node.get_postconditions():
             
@@ -57,7 +58,7 @@ def _extend_leaf_node(leaf_node, behavior_factory, world):
     and a subtree that fixes the pre-condition (condition) whenever it's not met.
     """
 
-    bt = pt.composites.Selector(name='Fallback')
+    bt = pt.composites.Selector(name='Fallback', memory=False)
     leaf_node.parent.replace_child(leaf_node, bt)
     bt.add_child(leaf_node)
     print("What is failing? ", leaf_node.name)
@@ -94,7 +95,7 @@ def _expand_tree(node, behavior_factory, world):
         print("Tree", node.name)
 
 
-def plan(world, get_execution_node, get_condition_parameters, goals):
+def plan(world, get_execution_node, get_condition_parameters, goals, name, out_dir):
     """
      Generates a behaviors tree to solve task given a set of goals
      and behaviors with pre-conditions and post-conditions. Since the
@@ -126,5 +127,5 @@ def plan(world, get_execution_node, get_condition_parameters, goals):
             break
 
     sbt_behavior_factory = BehaviorNodeFactory(get_execution_node)
-    pt.display.render_dot_tree(tree, name='Planned bt', target_directory='')
+    pt.display.render_dot_tree(tree, name=name, target_directory=out_dir)
     print(StringBehaviorTree('', sbt_behavior_factory, world, tree).to_string())

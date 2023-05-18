@@ -1,1 +1,1 @@
-from behavior_tree_learning.core.planner import planner
+from behavior_tree_learning.core.planner.node_factory import PlannerBehaviorNodeFactory
